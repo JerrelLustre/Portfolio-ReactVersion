@@ -1,0 +1,7 @@
+.container-fluid{
+    width: 100%;
+}
+
+.container{
+    max-width: 80rem;
+}

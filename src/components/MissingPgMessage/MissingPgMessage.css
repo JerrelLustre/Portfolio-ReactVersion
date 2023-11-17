@@ -1,0 +1,16 @@
+.fillPage{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    flex:1
+}
+
+.errorCode{
+color: #000;
+text-align: center;
+font-family: Roboto, sans-serif;
+font-size: 96px;
+font-style: normal;
+font-weight: 700;
+line-height: 72px; /* 75% */
+
+}
