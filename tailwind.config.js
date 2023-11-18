@@ -9,6 +9,7 @@ export default {
       },
       colors:{
         'black': '#222222',
+        'bgBlack' : '#101111',
         'white': '#f2f2f2',
         'highlight' : '#9AE7FF'
       },

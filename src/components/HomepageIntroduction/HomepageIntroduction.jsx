@@ -15,13 +15,13 @@ import mascot from "../../assets/svg/mascotLogo-trail-right.svg"
 
 export default function HomepageIntroduction() {
   return (
-    <Container>
+    <Container className="my-12">
     <Row className="justify-center">
       <Col className="w-full lg::w-8/12 max-w-4xl">
         <HeadingBox text="But first, let me introduce myself!" />
         <ContentContainer className={"relative"}>
           {/* Background Placed on top of the container */}
-          <div className="absolute top-0 left-0 right-0 h-[12rem] bg-red -z-10 border-b-8">
+          <div className="absolute top-0 left-0 right-0 h-[12rem] bg-red border-b-8">
             <img
               src={gardenBg}
               aria-hidden="true"
@@ -29,7 +29,7 @@ export default function HomepageIntroduction() {
             />
           </div>
           {/* Content */}
-          <div className=" flex flex-col lg:flex-row justify-between items-center lg:items-stretch">
+          <div className=" flex flex-col lg:flex-row justify-between items-center z-10 relative lg:items-stretch">
             {/* Left Image */}
             <img
               src={profilePic}
