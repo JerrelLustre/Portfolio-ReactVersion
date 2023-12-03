@@ -17,7 +17,7 @@ export default function HomepageIntroduction() {
   return (
     <Container className="my-12">
     <Row className="justify-center">
-      <Col className="w-full lg::w-8/12 max-w-4xl">
+      <Col className="w-full lg:w-8/12 max-w-4xl">
         <HeadingBox text="But first, let me introduce myself!" />
         <ContentContainer className={"relative"}>
           {/* Background Placed on top of the container */}
