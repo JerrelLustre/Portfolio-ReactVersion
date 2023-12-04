@@ -1,7 +1,5 @@
 import React from "react";
-import Container from "../LayoutBlocks/Container/Container";
-import Row from "../LayoutBlocks/Row/Row";
-import Col from "../LayoutBlocks/Col/Col";
+import { Container, Row, Col } from '../LayoutBlocks/LayoutBlocks';
 import HeadingBox from "../HeadingBox/HeadingBox";
 import './HomepageBanner.css';
 

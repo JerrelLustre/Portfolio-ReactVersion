@@ -1,8 +1,6 @@
 import React from "react";
 // Layout
-import Container from "../LayoutBlocks/Container/Container";
-import Row from "../LayoutBlocks/Row/Row";
-import Col from "../LayoutBlocks/Col/Col";
+import { Container, Row, Col } from '../LayoutBlocks/LayoutBlocks';
 // Img
 import logo from "../../assets/svg/mascotLogo-trail-left-faded.svg";
 import { IoIosMail } from "react-icons/io";
@@ -18,7 +16,7 @@ export default function Footer() {
   const currentYear = currentDate.getFullYear();
   return (
     <>
-      <Container fluid className="bg-white text-center">
+      <Container fluid className="bg-white text-center mt-8 border-t-8 border-highlight ">
         <Row>
           <Col className="w-full flex flex-col justify-center items-center py-5">
             <h2 className="font-oswald text-4xl">Contact Me</h2>
@@ -35,7 +33,7 @@ export default function Footer() {
             <div className="flex flex-col lg:flex-row gap-x-8 gap-y-4 mt-4">
               <div className="">
                 <p className="flex items-center font-oswald text-xl">
-                  <IoIosMail className="w-8 h-auto mr-6" />{" "}
+                  <IoIosMail color="#565656" className="w-8 h-auto mr-6" />
                   Jerrellustre@gmail.com
                 </p>
               </div>
@@ -45,7 +43,7 @@ export default function Footer() {
                   target="_blank"
                   className="flex items-center underline font-oswald text-xl"
                 >
-                  <FaLinkedin className="w-8 h-auto mr-6" /> View LinkedIn
+                  <FaLinkedin color="#565656" className="w-8 h-auto mr-6" /> View LinkedIn
                   Profile
                 </a>
               </div>
@@ -53,17 +51,17 @@ export default function Footer() {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className={'pb-24 lg:pb-0'}>
         <Row>
-          <Col className='justify-between items-center flex w-full'>
+          <Col className='justify-between items-center flex w-full '>
             <div className="pt-5 pb-4">
                 <a href="#" title="See my Github Profile" target="_blank" className=" mr-7 p-2"><FaGithub color="white" className="w-8 h-auto inline-block"/></a>
                 <a href="#" title="See my LinkedIn Profile" target="_blank" className="p-2"><FaLinkedin color="white" className="w-8 h-auto inline-block" /></a>
-                <p className="font-robcon text-white text-xl mt-3">Copyright {currentYear} &copy; Jerrel Lustre</p>
+                <p className="font-robcon text-white text-base lg:text-xl mt-3">Copyright {currentYear} &copy; Jerrel Lustre</p>
 
             </div>
             <div>
-              <Button anchor route='#' label='Scroll to top'/>
+              <Button anchor route='#top' label='Scroll to top'/>
             </div>
           </Col>
         </Row>

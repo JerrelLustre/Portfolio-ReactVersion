@@ -1,8 +1,6 @@
 import React from "react";
 // Grid
-import Container from "../LayoutBlocks/Container/Container";
-import Col from "../LayoutBlocks/Col/Col";
-import Row from "../LayoutBlocks/Row/Row";
+import { Container, Row, Col } from '../LayoutBlocks/LayoutBlocks';
 
 // React Router
 import { Link, useLocation } from "react-router-dom";
@@ -31,8 +29,8 @@ export default function Navigation() {
       className="bg-black bg-opacity-90 h-12 py-4 flex items-center my-4 justify-between fixed z-50"
       fluid
     >
-      <Container className="flex justify-between w-full">
-        <Row className="justify-between font-oswald text-lg text-white">
+    
+        <Row className="justify-between w-full  font-oswald text-lg text-white">
           <Col>
             <div className="flex w-full">
               <img src={logo} alt="Site Logo" className="w-16 h-16" />
@@ -64,7 +62,7 @@ export default function Navigation() {
             </div>
           </Col>
         </Row>
-      </Container>
+
     </Container>
   );
 }

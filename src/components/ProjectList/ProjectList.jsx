@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // Layout
-import Container from "../LayoutBlocks/Container/Container";
-import Col from "../LayoutBlocks/Col/Col";
-import Row from "../LayoutBlocks/Row/Row";
+import { Container, Row, Col } from '../LayoutBlocks/LayoutBlocks';
 // Components
 import HeadingBox from "../HeadingBox/HeadingBox";
 import ContentContainer from "../ContentContainer/ContentContainer";
