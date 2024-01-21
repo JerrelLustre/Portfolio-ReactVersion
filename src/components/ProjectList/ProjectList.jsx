@@ -7,21 +7,26 @@ import HeadingBox from "../HeadingBox/HeadingBox";
 import ContentContainer from "../ContentContainer/ContentContainer";
 import Button from "../Button/Button";
 
-export default function ProjectList({ children }) {
+export default function ProjectList({ children, text, projectLink = false }) {
+  if (text == null) {
+    text = "Here are some of my featured projects. Feel free to look around!";
+  }
+
   return (
     <Container>
       <Row className="justify-center">
         <Col className="w-full lg:w-8/12 max-w-4xl">
-          <HeadingBox text="Here are some of my featured projects. Feel free to look around!" />
+          <HeadingBox text={text} />
           <ContentContainer className="flex-col items-center flex">
             <div className="flex flex-wrap gap-y-4 justify-center mb-8">{children}</div>
-            <Button route="#" label="See All Projects" />
+            {projectLink ? <Button route="#" label="See All Projects" /> : null}
           </ContentContainer>
         </Col>
       </Row>
     </Container>
   );
 }
+
 
 export function ProjectCard({ route, title, desc, tags, img }) {
   return (

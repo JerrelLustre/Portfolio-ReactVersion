@@ -3,7 +3,7 @@ import React from "react";
 import { Container, Row, Col } from '../LayoutBlocks/LayoutBlocks';
 
 // React Router
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 // Icons
 import logo from "../../assets/svg/JerrelLustre-portfolio-logo-noText.svg";
@@ -39,15 +39,13 @@ export default function Navigation() {
                 {menuItems.map((item) => (
                   <li
                     key={item.id}
-                    className={`${
-                      location.pathname === item.path ? "active" : ""
-                    } flex justify-center flex-col items-center`}
+                    className={` flex justify-center flex-col items-center`}
                   >
                     <item.icon className="lg:hidden" size={32}/>
 
-                    <Link to={item.path} className="kg:p-2 text-sm lg:text-lg">
+                    <NavLink  to={item.path} className="kg:p-2 text-sm lg:text-lg">
                       {item.label}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))}
               </ul>

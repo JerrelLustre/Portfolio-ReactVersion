@@ -9,6 +9,7 @@ import HeadingBox from "../components/HeadingBox/HeadingBox";
 import Profile from "../assets/img/JerrelLustre-profile-lg.webp";
 import volunteer1 from "../assets/img/service-1.webp"
 import volunteer2 from "../assets/img/service-2.webp"
+import SkillsContainer from "../components/SkillsContainer/SkillsContainer";
 
 export default function About() {
   return (
@@ -39,7 +40,7 @@ export default function About() {
           <Col className={"w-full lg:w-6/12 flex  justify-center  my-4"}>
             <img
               src={Profile}
-              alt="Jerrel Lustre Profile shot"
+              alt="Jerrel Lustre profile shot"
               className="border-2 border-white"
             />
           </Col>
@@ -78,6 +79,7 @@ export default function About() {
 
         </Row>
       </Container>
+      <SkillsContainer/>
     </>
   );
 }

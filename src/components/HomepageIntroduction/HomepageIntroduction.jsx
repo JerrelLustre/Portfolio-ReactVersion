@@ -27,7 +27,7 @@ export default function HomepageIntroduction() {
             />
           </div>
           {/* Content */}
-          <div className=" flex flex-col lg:flex-row justify-between items-center z-10 relative lg:items-stretch">
+          <div className=" flex flex-col lg:flex-row-reverse justify-between items-center z-10 relative lg:items-stretch">
             {/* Left Image */}
             <img
               src={profilePic}
