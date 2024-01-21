@@ -1,0 +1,8 @@
+.mobile-menu {
+  top: 100%;
+  transition: top 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.mobile-menu.show {
+  top: 0; /* Display onscreen when the "show" class is applied */
+}

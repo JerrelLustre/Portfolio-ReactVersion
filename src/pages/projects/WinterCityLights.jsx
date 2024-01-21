@@ -2,6 +2,7 @@ import React from "react";
 // Components
 import { Col } from "../../components/LayoutBlocks/LayoutBlocks";
 import {
+  ProjectImageContainer,
   RolesList,
   SectionContainer,
   SectionHeading,
@@ -98,15 +99,14 @@ export default function WinterCityLights() {
                 <RolesList list={team} />
               </div>
             </div>
-            <div className="md:w-1/2 md:ml-8 h-fit flex justify-center items-center p-4 border-white border-2">
-              <img src={mockup} className="w-full" />
-            </div>
+            <ProjectImageContainer image={mockup} alt='Mockups for the mobile and desktop versions of the site'/>
           </Col>
         </SectionContainer>
         <SectionContainer>
-          <Col>
+          <Col className={"w-full mt-12 md:flex"}>
+            <div className="md:w-1/2">
             <SectionHeading title="Design Additions & Revisions" />
-            <p>
+              <p>
               During the original project design, the website only had a desktop
               viewport and suffered from design flaws such as a lack of
               consistency and poor hierarchy. Remaking it now, I decided to
@@ -122,13 +122,16 @@ export default function WinterCityLights() {
               for Canadians. At the end, I came up with new designs and planned
               to develop pages for the homepage and a set of three pages for the
               "event pass selection" process.
-            </p>
+              </p>
+            </div>
+            <ProjectImageContainer image={components} alt="Components made for the Winter City Lights prototype. It includes the header, footer, carousel, and 'cards' used in the event pass selection"/>
           </Col>
         </SectionContainer>
         <SectionContainer>
-          <Col>
+          <Col className={"w-full mt-12 md:flex"}>
+            <div className="md:w-1/2">
             <SectionHeading title="Development & Workflow" />
-            <p>
+              <p>
               To start, I first coded the mobile layout of the pages as it would
               make it easier to later develop the desktop design. I coded my
               HTML within php so that I had the option to create and reuse
@@ -141,13 +144,16 @@ export default function WinterCityLights() {
               to in the future. For site optimization, I also made sure every
               vital image loaded in with a lazyload plugin ensuring they load
               only when necessary.
-            </p>
+              </p>
+            </div>
+            <ProjectImageContainer image={homepage} alt='Homepage for the website'/>
           </Col>
         </SectionContainer>
         <SectionContainer>
-          <Col>
+          <Col className={"w-full mt-12 md:flex"}>
+            <div className="md:w-1/2">
             <SectionHeading title="Making the Carousel" />
-            <p>
+              <p>
               On the homepage, I used the Flickity plugin to create a carousel
               that talked about different parts of the event. I also used PHP to
               populate the content for each carousel cell dynamically. In order
@@ -155,7 +161,9 @@ export default function WinterCityLights() {
               the plugin's CSS to move the carousel navigation into its own
               container which allowed me to better position it and add things
               such as giving each section a thumbnail on the carousel's nav bar.
-            </p>
+              </p>
+            </div>
+            <ProjectImageContainer image={carousel} alt="Demonstration of the event info carouse"/>
           </Col>
         </SectionContainer>
       </ProjectPageContainer>

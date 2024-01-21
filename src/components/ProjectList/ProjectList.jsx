@@ -35,13 +35,13 @@ export function ProjectCard({ route, title, desc, tags, img }) {
         <h3 className="lg:w-1/2 font-oswald text-2xl text-highlight">{title}</h3>
         <p className="lg:w-1/2 font-robcon text-base">{desc}</p>
       </div>
-      <img src={img} alt={title} className="w-full my-4" />
-      <ul className="flex justify-center flex-wrap text-base">
+      <img src={img} alt={title} className="w-full my-4 object-cover aspect-square" />
+      <ul className="flex justify-center flex-wrap text-base font-bold">
         {tags.map((tag, index) => (
           <li key={index}>
             {tag}
             {/* stop printing the seperator on the last item. Symbol equivalent to " / " */}
-            {index < tags.length - 1 && <span>&nbsp;&#47;&nbsp;</span>}
+            {index < tags.length - 1 && <span className="text-highlight">&nbsp;&#47;&nbsp;</span>}
           </li>
         ))}
       </ul>
