@@ -1,4 +1,4 @@
-import React from "react";
+;
 import charIcon from "../../assets/svg/est.svg";
 
 export default function HeadingBox({ text }) {

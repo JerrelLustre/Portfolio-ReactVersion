@@ -7,13 +7,15 @@ import { Container, Row, Col } from "../LayoutBlocks/LayoutBlocks";
 // Icons
 import { FaLinkedin } from "react-icons/fa";
 import { IoReturnDownBack } from "react-icons/io5";
+import { TfiMenuAlt } from "react-icons/tfi";
+import { IoCloseOutline } from "react-icons/io5";
 // Plugins
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 // Components
 import Button from "../Button/Button";
 // CSS
-import './mobileMenu.css'
+import "./mobileMenu.css";
 
 // ProjectPageContainer Component
 export default function ProjectPageContainer({ children }) {
@@ -26,7 +28,7 @@ export default function ProjectPageContainer({ children }) {
   }, []);
 
   return (
-    <Container >
+    <Container>
       <Row>
         <Col>
           <div className="pt-40 flex flex-col justify-center items-center">
@@ -72,14 +74,17 @@ function ProjectPageNavigation() {
 
   // Function to toggle menu visibility
   const toggleMenu = () => {
-    console.log('ahoy')
     setMenuOpen(!isMenuOpen);
   };
 
   // Render the navigation component
   return (
     <>
-      <div className={`mobile-menu ${isMenuOpen ? 'show' : ''} fixed inset-0 h-screen lg:h-auto lg:relative bg-[#000] items-center md:items-start flex px-4 z-20`}>
+      <div
+        className={`mobile-menu ${
+          isMenuOpen ? "show" : ""
+        } fixed inset-0 h-screen lg:h-auto lg:relative bg-[#000] items-center md:items-start flex px-4 z-20`}
+      >
         <nav className="w-full lg:w-fit sticky overflow-visible pb-24 top-0 h-4/5 mt-20 overflow-y-auto lg:h-screen lg:pt-24 lg:pb-8 flex flex-col justify-between items-center">
           <div className="mb-4 lg:hidden">
             <h2 className="text-4xl text-white font-oswald ">
@@ -99,7 +104,13 @@ function ProjectPageNavigation() {
           </Link>
         </nav>
       </div>
-      <div className="fixed w-10 h-10 bg-highlight z-40 right-0 bottom-50" onClick={toggleMenu}></div>
+      <div
+        className="fixed  bg-black border-2 border-highlight p-2 z-40 right-10 bottom-20 lg:hidden"
+        onClick={toggleMenu}
+      >
+        <TfiMenuAlt className={`w-10 h-10 ${isMenuOpen ? "hidden" : ""}`} />
+        <IoCloseOutline  className={`w-10 h-10 ${isMenuOpen ? "" : "hidden"}`} />
+      </div>
     </>
   );
 }
@@ -108,11 +119,12 @@ function ProjectPageNavigation() {
 /*                        // SectionContainer Component                       */
 /* -------------------------------------------------------------------------- */
 export function SectionContainer({ children }) {
+  // Functionality should be similar to the GridContainer + Row components but we're making it seperate here because we need less padding than usual
   return (
     <section className="my-16 text-lg lg:text-xl">
-      <Container className={"lg:px-4 2xl:px-10"}>
-        <Row>{children}</Row>
-      </Container>
+      <div className={"customContainer box-border mx-auto px-10 lg:px-4 2xl:px-10"}>
+        <div className="row w-full flex flex-wrap">{children}</div>
+      </div>
     </section>
   );
 }
@@ -215,7 +227,7 @@ export function ProjectImageContainer({ className, image, alt = "" }) {
         slides={[{ src: image, alt: alt }]}
         controller={{ closeOnBackdropClick: true }}
         render={{
-          buttonPrev: () => null, // This will hide the Prev button
+          buttonPrev: () => null,
           buttonNext: () => null,
         }}
       />

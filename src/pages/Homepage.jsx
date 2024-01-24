@@ -1,4 +1,4 @@
-import React from "react";
+;
 
 
 import HomepageBanner from "../components/HomepageBanner/HomepageBanner";
@@ -7,11 +7,11 @@ import ProjectList, { ProjectCard } from "../components/ProjectList/ProjectList"
 
 
 
-
 export default function Homepage() {
 
   return (
     <>
+
       <HomepageBanner/>
       <HomepageIntroduction/>
       <ProjectList>

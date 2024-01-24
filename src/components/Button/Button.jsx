@@ -1,18 +1,64 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useRef } from "react";
+import gsap from "gsap/gsap-core";
+import { useGSAP } from "@gsap/react";
+
+// Images
+import selector from "../../assets/svg/selector-dark.svg";
 
 export default function Button({ route, label, anchor }) {
-  const baseClasses = 'btn inline-block py-3 px-6 bg-white text-black text-xl font-oswald';
-
+  const baseClasses =
+    "btn inline-block py-3 px-6 bg-white text-black text-xl font-oswald";
+  let btnElement = "";
   if (anchor) {
     // Render an anchor element
-    return (
+    btnElement = (
       <a href={route} className={`${baseClasses}`}>
         {label}
       </a>
     );
   } else {
     // Render a Link element
-    return <Link to={route} className={`${baseClasses}`}>{label}</Link>;
+    btnElement = (
+      <Link to={route} className={`${baseClasses}`}>
+        {label}
+      </Link>
+    );
   }
+
+  // Animation
+
+  const container = useRef();
+  const { contextSafe } = useGSAP({ scope: container });
+  const duration = 0.2;
+  
+
+  const applyAnimation = (opacity,xPos, yPos, outlineWidth) =>
+    contextSafe(
+      () => {
+        let timeline = gsap.timeline()
+        timeline.to(".selector", { opacity,x:xPos,y:yPos, duration },"start");
+        timeline.to(".btnContainer", { outlineWidth, duration },"start");
+      },
+      { scope: container }
+    );
+
+  const btnAnimationForward = applyAnimation(1,"33%","-35%", "5");
+  const btnAnimationReverse = applyAnimation(0,"100%","-100%", "0");
+
+  return (
+    <div ref={container}>
+      <div
+        className="btnContainer relative w-fit outline-white outline-offset-2 outline outline-0 border-0"
+        onMouseEnter={btnAnimationForward}
+        onMouseLeave={btnAnimationReverse}
+      >
+        {btnElement}
+        <img
+          src={selector}
+          className="selector opacity-0 inline-block  h-8 absolute right-0 top-0 translate-x-[100%] translate-y-[-100%] pointer-events-none"
+        />
+      </div>
+    </div>
+  );
 }

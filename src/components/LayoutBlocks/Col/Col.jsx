@@ -1,4 +1,4 @@
-import React from "react";
+;
 
 export default function Col({ children, className }) {
     return (

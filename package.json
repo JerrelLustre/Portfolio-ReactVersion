@@ -1,5 +1,5 @@
 {
-  "name": "efg-steps-landingpg",
+  "name": "jerrellustre-react-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.0",
     "fslightbox-react": "^1.7.6",
-    "gsap": "^3.12.2",
+    "gsap": "^3.12.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",

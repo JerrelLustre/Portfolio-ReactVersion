@@ -1,4 +1,4 @@
-import React from "react";
+;
 // Layout
 import { Container, Row, Col } from '../LayoutBlocks/LayoutBlocks';
 // Img
