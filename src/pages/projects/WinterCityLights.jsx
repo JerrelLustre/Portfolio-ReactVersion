@@ -1,4 +1,4 @@
-;
+
 // Components
 import { Col } from "../../components/LayoutBlocks/LayoutBlocks";
 import {
@@ -77,15 +77,14 @@ export default function WinterCityLights() {
   return (
     <>
       <ProjectPageContainer>
-        {/* For each section create a navigation button */}
         <SectionContainer>
           {/* Banner */}
           <Col className={"w-full"}>
             <SectionHeading title={projectDetails["project-title"]} level={1} />
             <img src={banner} alt="Winter City Lights mock website" />
           </Col>
-          <Col className={"w-full mt-12 md:flex"}>
-            <div className="md:w-1/2">
+          <Col className={"w-full mt-12 xl:flex"}>
+            <div className="xl:w-1/2">
               <SectionHeading title="Intro" />
               <p>
                 This project was initially intended as a mock ad campaign for a
@@ -94,17 +93,17 @@ export default function WinterCityLights() {
                 also helped design and prototype the event website. I would
                 later develop the design into a real website for this portfolio.
               </p>
-              <div className="md:flex mt-10">
+              <div className="xl:flex mt-10">
                 <SkillsList list={techAndSkills} />
                 <RolesList list={team} />
               </div>
             </div>
-            <ProjectImageContainer image={mockup} alt='Mockups for the mobile and desktop versions of the site'/>
+            <ProjectImageContainer className={"my-4 xl:my-0 xl:ml-8 xl:w-1/2"} image={mockup} alt='Mockups for the mobile and desktop versions of the site'/>
           </Col>
         </SectionContainer>
         <SectionContainer>
-          <Col className={"w-full mt-12 md:flex"}>
-            <div className="md:w-1/2">
+          <Col className={"w-full mt-12 xl:flex"}>
+            <div className="xl:w-1/2">
             <SectionHeading title="Design Additions & Revisions" />
               <p>
               During the original project design, the website only had a desktop
@@ -124,12 +123,12 @@ export default function WinterCityLights() {
               "event pass selection" process.
               </p>
             </div>
-            <ProjectImageContainer image={components} alt="Components made for the Winter City Lights prototype. It includes the header, footer, carousel, and 'cards' used in the event pass selection"/>
+            <ProjectImageContainer className={"my-4 xl:my-0 xl:ml-8 xl:w-1/2"} image={components} alt="Components made for the Winter City Lights prototype. It includes the header, footer, carousel, and 'cards' used in the event pass selection"/>
           </Col>
         </SectionContainer>
         <SectionContainer>
-          <Col className={"w-full mt-12 md:flex"}>
-            <div className="md:w-1/2">
+          <Col className={"w-full mt-12 xl:flex"}>
+            <div className="xl:w-1/2">
             <SectionHeading title="Development & Workflow" />
               <p>
               To start, I first coded the mobile layout of the pages as it would
@@ -146,12 +145,12 @@ export default function WinterCityLights() {
               only when necessary.
               </p>
             </div>
-            <ProjectImageContainer image={homepage} alt='Homepage for the website'/>
+            <ProjectImageContainer className={"my-4 xl:my-0 xl:ml-8 xl:w-1/2"} image={homepage} alt='Homepage for the website'/>
           </Col>
         </SectionContainer>
         <SectionContainer>
-          <Col className={"w-full mt-12 md:flex"}>
-            <div className="md:w-1/2">
+          <Col className={"w-full mt-12 xl:flex"}>
+            <div className="xl:w-1/2">
             <SectionHeading title="Making the Carousel" />
               <p>
               On the homepage, I used the Flickity plugin to create a carousel
@@ -163,7 +162,7 @@ export default function WinterCityLights() {
               such as giving each section a thumbnail on the carousel's nav bar.
               </p>
             </div>
-            <ProjectImageContainer image={carousel} alt="Demonstration of the event info carouse"/>
+            <ProjectImageContainer className={"my-4 xl:my-0 xl:ml-8 xl:w-1/2"} image={carousel} alt="Demonstration of the event info carouse"/>
           </Col>
         </SectionContainer>
       </ProjectPageContainer>

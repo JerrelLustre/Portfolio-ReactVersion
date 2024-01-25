@@ -31,7 +31,7 @@ export default function ProjectPageContainer({ children }) {
     <Container>
       <Row>
         <Col>
-          <div className="pt-40 flex flex-col justify-center items-center">
+          <div className="pt-20 flex flex-col justify-center items-center">
             <div className="border-white border-4 text-white font-robcon mx-8 flex mb-10 relative">
               {isPageLoaded && <ProjectPageNavigation />}
               <div>{children}</div>
@@ -83,9 +83,9 @@ function ProjectPageNavigation() {
       <div
         className={`mobile-menu ${
           isMenuOpen ? "show" : ""
-        } fixed inset-0 h-screen lg:h-auto lg:relative bg-[#000] items-center md:items-start flex px-4 z-20`}
+        } fixed inset-0 h-screen lg:h-auto lg:relative bg-[#000] items-center md:items-start flex z-20`}
       >
-        <nav className="w-full lg:w-fit sticky overflow-visible pb-24 top-0 h-4/5 mt-20 overflow-y-auto lg:h-screen lg:pt-24 lg:pb-8 flex flex-col justify-between items-center">
+        <nav className="w-full px-6 lg:w-fit sticky overflow-visible pb-24 top-0 h-4/5 mt-20 overflow-y-auto lg:h-screen lg:pt-24 lg:pb-8 flex flex-col justify-between items-center">
           <div className="mb-4 lg:hidden">
             <h2 className="text-4xl text-white font-oswald ">
               Table of Contents
@@ -122,7 +122,7 @@ export function SectionContainer({ children }) {
   // Functionality should be similar to the GridContainer + Row components but we're making it seperate here because we need less padding than usual
   return (
     <section className="my-16 text-lg lg:text-xl">
-      <div className={"customContainer box-border mx-auto px-10 lg:px-4 2xl:px-10"}>
+      <div className={"customContainer box-border mx-auto px-10 lg:px-8 2xl:px-10"}>
         <div className="row w-full flex flex-wrap">{children}</div>
       </div>
     </section>
@@ -211,7 +211,7 @@ export function ProjectImageContainer({ className, image, alt = "" }) {
   // Render image container with lightbox
   return (
     <div
-      className={`lg:w-1/2 lg:ml-8 h-fit flex justify-center items-center p-4 border-white border-2${
+      className={` h-fit flex justify-center items-center p-4 border-white border-2${
         className ? " " + className : ""
       }`}
     >
