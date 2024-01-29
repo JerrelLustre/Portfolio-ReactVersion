@@ -14,6 +14,7 @@ import MissingPage from "./pages/404";
 // Projects
 import WinterCityLights from "./pages/projects/WinterCityLights";
 import Patchwork from "./pages/projects/Patchwork";
+import VanFil from "./pages/projects/VanFil";
 
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="Projects" element={<Projects />} />
       <Route path="Projects/WinterCityLights" element={<WinterCityLights />} />
       <Route path="Projects/Patchwork" element={<Patchwork />} />
+      <Route path="Projects/VanFilChurchWebsite" element={<VanFil />} />
       <Route path="*" element={<MissingPage />} />
     </Route>
   )

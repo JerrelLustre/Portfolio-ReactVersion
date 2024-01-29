@@ -9,13 +9,16 @@ import { FaLinkedin } from "react-icons/fa";
 import { IoReturnDownBack } from "react-icons/io5";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { IoCloseOutline } from "react-icons/io5";
+import { FaExternalLinkAlt } from "react-icons/fa";
 // Plugins
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 // Components
 import Button from "../Button/Button";
+import ImageLoadingContainer from "../ImageLoadingContainer/ImageLoadingContainer";
 // CSS
 import "./mobileMenu.css";
+
 
 // ProjectPageContainer Component
 export default function ProjectPageContainer({ children }) {
@@ -109,7 +112,7 @@ function ProjectPageNavigation() {
         onClick={toggleMenu}
       >
         <TfiMenuAlt className={`w-10 h-10 ${isMenuOpen ? "hidden" : ""}`} />
-        <IoCloseOutline  className={`w-10 h-10 ${isMenuOpen ? "" : "hidden"}`} />
+        <IoCloseOutline className={`w-10 h-10 ${isMenuOpen ? "" : "hidden"}`} />
       </div>
     </>
   );
@@ -122,7 +125,9 @@ export function SectionContainer({ children }) {
   // Functionality should be similar to the GridContainer + Row components but we're making it seperate here because we need less padding than usual
   return (
     <section className="my-16 text-lg lg:text-xl">
-      <div className={"customContainer box-border mx-auto px-10 lg:px-8 2xl:px-10"}>
+      <div
+        className={"customContainer box-border mx-auto px-10 lg:px-8 2xl:px-10"}
+      >
         <div className="row w-full flex flex-wrap">{children}</div>
       </div>
     </section>
@@ -153,7 +158,7 @@ export function SectionHeading({ title, level = 2 }) {
 /* -------------------------------------------------------------------------- */
 export function SkillsList({ list }) {
   return (
-    <div className="lg:mr-12  whitespace-nowrap my-8 lg:my-0">
+    <div className="  whitespace-nowrap my-8 lg:my-0">
       <h3 className="font-oswald font-extralighttext-2xl">
         Technology & Skills
       </h3>
@@ -202,6 +207,34 @@ export function RolesList({ list }) {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                                 Site Links                                 */
+/* -------------------------------------------------------------------------- */
+export function LinkList({ githubLink,liveLink }) {
+  return (
+    <div className="my-8 lg:my-0">
+      <h3 className="font-oswald font-extralighttext-2xl">Project Links</h3>
+      <div className="h-1 mb-3 bg-highlight"></div>
+      <ul className="font-normal flex flex-col gap-2 underline">
+        {githubLink ? (
+          <li>
+            <a href={githubLink} target="_blank">
+              See project's Github<FaExternalLinkAlt className="inline ml-4 " />
+            </a>
+          </li>
+        ) : null}
+        {liveLink ? (
+          <li>
+            <a href={liveLink} target="_blank">
+              See project's live site<FaExternalLinkAlt className="inline ml-4  " />
+            </a>
+          </li>
+        ) : null}
+      </ul>
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
 /*                     // ProjectImageContainer Component                     */
 /* -------------------------------------------------------------------------- */
 export function ProjectImageContainer({ className, image, alt = "" }) {
@@ -215,11 +248,14 @@ export function ProjectImageContainer({ className, image, alt = "" }) {
         className ? " " + className : ""
       }`}
     >
+      <ImageLoadingContainer>
       <img
         src={image}
         className="w-full cursor-pointer"
         onClick={() => setOpen(true)}
       />
+      </ImageLoadingContainer>
+
       <Lightbox
         onClick={() => setOpen(true)}
         open={open}

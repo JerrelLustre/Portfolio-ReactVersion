@@ -93,7 +93,7 @@ export default function WinterCityLights() {
                 also helped design and prototype the event website. I would
                 later develop the design into a real website for this portfolio.
               </p>
-              <div className="xl:flex mt-10">
+              <div className="lg:flex mt-10 lg:gap-12">
                 <SkillsList list={techAndSkills} />
                 <RolesList list={team} />
               </div>

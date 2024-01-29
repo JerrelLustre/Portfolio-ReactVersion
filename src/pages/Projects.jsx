@@ -1,10 +1,10 @@
-
 import SubPageBanner from "../components/SubPageBanner/SubPageBanner";
 import ProjectList from "../components/ProjectList/ProjectList";
 import { ProjectCard } from "../components/ProjectList/ProjectList";
 // Thumbnails
 import WinterCityLightsThumbnail from "../assets/img/winter_city_lights/WinterCityLight-ProjectThumbnail.webp";
-import PatchworkThumbnail from "../assets/img/patchwork/JerrelLustre-patchworkThumbnail.webp"
+import PatchworkThumbnail from "../assets/img/patchwork/JerrelLustre-patchworkThumbnail.webp";
+import VanfilThumbnail from "../assets/img/vanfil/JerrelLustre-vanfil-thumbnail.webp"
 
 export default function Projects() {
   return (
@@ -18,15 +18,33 @@ export default function Projects() {
           route="WinterCityLights"
           title="Winter City Lights"
           desc="A developed website for a mock Canadian winter festival"
-          tags={["HTML & PHP","Tailwind", "Design", "JS", "Plugin Usage"]}
+          tags={["HTML & PHP", "Tailwind", "Design", "JS", "Plugin Usage"]}
           img={WinterCityLightsThumbnail}
         />
         <ProjectCard
           route="Patchwork"
           title="Patchwork"
-          desc="A class and assignment tracker developed during my studies"
-          tags={["PHP Laravel", "Tailwind", "User Research", "SQL & MySQL", "Alpine.js"]}
+          desc="A personal course and assignment tracker"
+          tags={[
+            "PHP Laravel",
+            "Tailwind",
+            "User Research",
+            "SQL & MySQL",
+            "Alpine.js",
+          ]}
           img={PatchworkThumbnail}
+        />
+        <ProjectCard
+          route="VanFilChurchWebsite"
+          title="VanFil Church's website"
+          desc="Vanfil's redeveloped Wordpress site"
+          tags={[
+            "Wordpress",
+            "Media Management",
+            "Site Design",
+            "SEO Management"
+          ]}
+          img={VanfilThumbnail}
         />
       </ProjectList>
     </>

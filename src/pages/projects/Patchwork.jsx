@@ -8,6 +8,7 @@ import {
   SkillsList,
 } from "../../components/ProjectPageContainer/ProjectPageContainer";
 import ProjectPageContainer from "../../components/ProjectPageContainer/ProjectPageContainer";
+import ImageLoadingContainer from "../../components/ImageLoadingContainer/ImageLoadingContainer";
 
 // Images
 
@@ -54,16 +55,19 @@ export default function Patchwork() {
           {/* Banner */}
           <Col className={"w-full"}>
             <SectionHeading title={projectDetails["project-title"]} level={1} />
+
+            <ImageLoadingContainer>
             <img
               src={desktopMockup}
               alt="Mockup for desktop version of the site"
             />
+            </ImageLoadingContainer>
           </Col>
           <Col className={"w-full mt-12 lg:flex"}>
             <div className="lg:w-full">
               <SectionHeading title="Intro" />
               <p>
-                During my university web development studies with fellow peers,
+                During my web development studies alongside fellow peers,
                 we came to be familiar with the student hub and its flaws. Over
                 time, frustrations over these issues grew and we resolved to
                 embark on a mission to create an alternate way for our peers to
@@ -73,7 +77,7 @@ export default function Patchwork() {
                 but also provide a seamless user experience for overseeing both
                 assignments and exams in a single, streamlined interface.
               </p>
-              <div className="lg:flex mt-10">
+              <div className="lg:flex mt-10 lg:gap-12">
                 <SkillsList list={techAndSkills} />
                 <RolesList list={team} />
               </div>
