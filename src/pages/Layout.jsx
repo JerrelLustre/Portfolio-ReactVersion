@@ -5,7 +5,7 @@ import { Outlet, ScrollRestoration } from "react-router-dom";
 
 export default function Layout() {
   return (
-    <div className="d-flex flex-column min-vh-100 bg-bgBlack">
+    <div className=" bg-bgBlack">
       <ScrollRestoration />
       <Navigation />
       <Outlet />

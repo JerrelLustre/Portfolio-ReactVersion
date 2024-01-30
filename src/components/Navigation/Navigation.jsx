@@ -1,6 +1,5 @@
-;
 // Grid
-import { Container, Row, Col } from '../LayoutBlocks/LayoutBlocks';
+import { Container, Row, Col } from "../LayoutBlocks/LayoutBlocks";
 
 // React Router
 import { NavLink, useLocation } from "react-router-dom";
@@ -29,38 +28,38 @@ export default function Navigation() {
       className="bg-black bg-opacity-90 h-12 py-4 flex items-center my-4 justify-between fixed z-50"
       fluid
     >
-    
-        <Row className="justify-between w-full  font-oswald text-lg text-white">
-          <Col>
-            <div className="flex w-full">
-              <img src={logo} alt="Site Logo" className="w-16 h-16" />
-              <ul className="lg:ml-6 flex gap-12 lg:gap-8 shadow-xl lg:shadow-none  items-center fixed bg-black lg:bg-transparent py-3 justify-center lg:justify-start lg:py-0 left-0 right-0 bottom-0 lg:relative">
-                {/* Generate Menu links based on menuItems array */}
-                {menuItems.map((item) => (
-                  <li
-                    key={item.id}
-                    className={` flex justify-center flex-col items-center`}
+      <Row className="justify-between w-full  font-oswald text-lg text-white">
+        <Col>
+          <div className="flex w-full">
+            <img src={logo} alt="Site Logo" className="w-16 h-16" />
+            <ul className="lg:ml-6 flex gap-12 lg:gap-8 shadow-xl lg:shadow-none  items-center fixed bg-black lg:bg-transparent py-3 justify-center lg:justify-start lg:py-0 left-0 right-0 bottom-0 lg:relative">
+              {/* Generate Menu links based on menuItems array */}
+              {menuItems.map((item) => (
+                <li
+                  key={item.id}
+                  className={` flex justify-center flex-col items-center`}
+                >
+                  <NavLink
+                    to={item.path}
+                    className="kg:p-2 text-sm lg:text-lg flex-col flex items-center"
                   >
-                    <item.icon className="lg:hidden" size={32}/>
-
-                    <NavLink  to={item.path} className="kg:p-2 text-sm lg:text-lg">
-                      {item.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Col>
-          <Col className="align-self-end flex items-center">
-            <div className="flex">
-              <a href="#" className="w-full flex items-center">
-                <IoIosMail className="w-12 h-12" />
-                <span className="ml-3">Contact Me</span>
-              </a>
-            </div>
-          </Col>
-        </Row>
-
+                    <item.icon className="lg:hidden" size={32} />
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Col>
+        <Col className="align-self-end flex items-center">
+          <div className="flex">
+            <a href="#" className="w-full flex items-center">
+              <IoIosMail className="w-12 h-12" />
+              <span className="ml-3">Contact Me</span>
+            </a>
+          </div>
+        </Col>
+      </Row>
     </Container>
   );
 }

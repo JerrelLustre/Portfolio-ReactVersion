@@ -21,7 +21,7 @@ export default function ProjectList({ children, text, projectLink = false }) {
             <div className="flex flex-wrap gap-y-4 justify-center mb-8">
               {children}
             </div>
-            {projectLink ? <Button route="#" label="See All Projects" /> : null}
+            {projectLink ? <Button route="projects" label="See All Projects" /> : null}
           </ContentContainer>
         </Col>
       </Row>
@@ -32,6 +32,7 @@ export default function ProjectList({ children, text, projectLink = false }) {
 export function ProjectCard({ route, title, desc, tags, img }) {
   return (
     <Link to={route} className="w-5/12 m-3 bg-black p-3 block">
+    <Link to={"/projects/" + route} className="w-5/12 m-3 bg-black p-3 block">
       <div className="flex flex-col lg:flex-row lg:items-center">
         <h3 className="lg:w-1/2 font-oswald text-2xl text-highlight">
           {title}

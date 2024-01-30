@@ -10,15 +10,17 @@ import { IoReturnDownBack } from "react-icons/io5";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { IoCloseOutline } from "react-icons/io5";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaCircleInfo } from "react-icons/fa6";
 // Plugins
 import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 // Components
 import Button from "../Button/Button";
 import ImageLoadingContainer from "../ImageLoadingContainer/ImageLoadingContainer";
 // CSS
 import "./mobileMenu.css";
-
 
 // ProjectPageContainer Component
 export default function ProjectPageContainer({ children }) {
@@ -107,6 +109,7 @@ function ProjectPageNavigation() {
           </Link>
         </nav>
       </div>
+      {/* Menu Toggle */}
       <div
         className="fixed  bg-black border-2 border-highlight p-2 z-40 right-10 bottom-20 lg:hidden"
         onClick={toggleMenu}
@@ -209,7 +212,7 @@ export function RolesList({ list }) {
 /* -------------------------------------------------------------------------- */
 /*                                 Site Links                                 */
 /* -------------------------------------------------------------------------- */
-export function LinkList({ githubLink,liveLink }) {
+export function LinkList({ githubLink, liveLink }) {
   return (
     <div className="my-8 lg:my-0">
       <h3 className="font-oswald font-extralighttext-2xl">Project Links</h3>
@@ -217,15 +220,17 @@ export function LinkList({ githubLink,liveLink }) {
       <ul className="font-normal flex flex-col gap-2 underline">
         {githubLink ? (
           <li>
-            <a href={githubLink} target="_blank">
-              See project's Github<FaExternalLinkAlt className="inline ml-4 " />
+            <a href={githubLink} target="_blank" className="flex">
+              Project Github
+              <FaExternalLinkAlt className="inline ml-4 " />
             </a>
           </li>
         ) : null}
         {liveLink ? (
           <li>
-            <a href={liveLink} target="_blank">
-              See project's live site<FaExternalLinkAlt className="inline ml-4  " />
+            <a href={liveLink} target="_blank" className="flex">
+              Project Live site
+              <FaExternalLinkAlt className="inline ml-4  " />
             </a>
           </li>
         ) : null}
@@ -244,23 +249,27 @@ export function ProjectImageContainer({ className, image, alt = "" }) {
   // Render image container with lightbox
   return (
     <div
-      className={` h-fit flex justify-center items-center p-4 border-white border-2${
+      className={` h-fit relative flex justify-center items-center p-4 border-white border-2${
         className ? " " + className : ""
       }`}
     >
+      {/* Info Icon place in the top right to hint to users that they can click on the image */}
+      <FaCircleInfo className="w-8 h-8 pointer-events-none fill-highlight top-4 right-4 absolute" />
       <ImageLoadingContainer>
-      <img
-        src={image}
-        className="w-full cursor-pointer"
-        onClick={() => setOpen(true)}
-      />
+        <img
+          src={image}
+          className="w-full cursor-pointer"
+          onClick={() => setOpen(true)}
+        />
       </ImageLoadingContainer>
 
       <Lightbox
         onClick={() => setOpen(true)}
         open={open}
         close={() => setOpen(false)}
-        slides={[{ src: image, alt: alt }]}
+        slides={[{ src: image, alt: alt, description: alt }]}
+        plugins={[Captions]}
+        captions={alt}
         controller={{ closeOnBackdropClick: true }}
         render={{
           buttonPrev: () => null,
