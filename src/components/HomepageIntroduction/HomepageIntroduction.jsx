@@ -20,8 +20,8 @@ export default function HomepageIntroduction() {
           <HeadingBox text="But first, let me introduce myself!" />
           <ContentContainer className={"relative"}>
             {/* Background Placed on top of the container */}
-            <div className="absolute top-0 left-0 right-0 h-[12rem] bg-red border-b-8">
-              <ImageLoadingContainer>
+            <div className="absolute top-0 left-0 right-0 h-[12rem] border-b-8">
+              <ImageLoadingContainer className={'object-cover w-full h-full'}>
                 <img
                   src={gardenBg}
                   aria-hidden="true"
@@ -38,7 +38,7 @@ export default function HomepageIntroduction() {
                   className="w-[17.5rem]  object-contain"
                 />
               </ImageLoadingContainer>
-              <div className="w-7/12 ">
+              <div className="sm:w-7/12 ">
                 <div className=" lg:h-[11rem]">
                   <ImageLoadingContainer>
                     <img

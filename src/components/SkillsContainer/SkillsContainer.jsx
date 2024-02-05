@@ -112,7 +112,7 @@ function SkillsList({ title, skills, icons }) {
 
       <ul className="list-disc font-robcon text-xl flex flex-wrap gap-y-3 list-inside">
         {skills.map((item, index) => (
-          <li key={index} className="basis-1/2">
+          <li key={index} className="basis-full sm:basis-1/2">
             {item}
           </li>
         ))}

@@ -2,20 +2,28 @@ import { Link } from "react-router-dom";
 import { useRef } from "react";
 import gsap from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
+import { Link as ScrollLink } from "react-scroll";
 
 // Images
 import selector from "../../assets/svg/selector-dark.svg";
 
 export default function Button({ route, label, anchor }) {
   const baseClasses =
-    "btn inline-block py-3 px-6 bg-white text-black text-xl font-oswald";
+    "btn inline-block py-3 px-6 bg-white text-black text-base sm:text-xl font-oswald cursor-pointer";
   let btnElement = "";
   if (anchor) {
     // Render an anchor element
     btnElement = (
-      <a href={route} className={`${baseClasses}`}>
+      <ScrollLink
+        to={route}
+        className={`${baseClasses}`}
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+      >
         {label}
-      </a>
+      </ScrollLink>
     );
   } else {
     // Render a Link element
@@ -31,20 +39,23 @@ export default function Button({ route, label, anchor }) {
   const container = useRef();
   const { contextSafe } = useGSAP({ scope: container });
   const duration = 0.2;
-  
 
-  const applyAnimation = (opacity,xPos, yPos, outlineWidth) =>
+  const applyAnimation = (opacity, xPos, yPos, outlineWidth) =>
     contextSafe(
       () => {
-        let timeline = gsap.timeline()
-        timeline.to(".selector", { opacity,x:xPos,y:yPos, duration },"start");
-        timeline.to(".btnContainer", { outlineWidth, duration },"start");
+        let timeline = gsap.timeline();
+        timeline.to(
+          ".selector",
+          { opacity, x: xPos, y: yPos, duration },
+          "start"
+        );
+        timeline.to(".btnContainer", { outlineWidth, duration }, "start");
       },
       { scope: container }
     );
 
-  const btnAnimationForward = applyAnimation(1,"33%","-35%", "5");
-  const btnAnimationReverse = applyAnimation(0,"100%","-100%", "0");
+  const btnAnimationForward = applyAnimation(1, "33%", "-35%", "5");
+  const btnAnimationReverse = applyAnimation(0, "100%", "-100%", "0");
 
   return (
     <div ref={container}>

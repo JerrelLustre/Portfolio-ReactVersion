@@ -31,8 +31,7 @@ export default function ProjectList({ children, text, projectLink = false }) {
 
 export function ProjectCard({ route, title, desc, tags, img }) {
   return (
-    <Link to={route} className="w-5/12 m-3 bg-black p-3 block">
-    <Link to={"/projects/" + route} className="w-5/12 m-3 bg-black p-3 block">
+    <Link to={"/projects/" + route} className="sm:w-8/12 md:w-5/12 m-3 bg-black p-3 block">
       <div className="flex flex-col lg:flex-row lg:items-center">
         <h3 className="lg:w-1/2 font-oswald text-2xl text-highlight">
           {title}

@@ -22,7 +22,7 @@ export default function HomepageBanner() {
     <Container className="lg:pb-8 lg:pt-20 homepageBanner h-screen flex items-center" >
       <Row className="justify-center border-2 border-white h-[90%] px-4 py-8 items-center ">
         <Col className="flex flex-col items-center text-white ">
-          <p className="uppercase text-3xl lg:text-5xl font-oswald tracking-[0.75rem] mb-4">
+          <p className="uppercase text-3xl lg:text-5xl font-oswald tracking-[0.75rem] mb-4 text-center">
             Jerrel Lustre
           </p>
           <HeadingBox text="I want to develop quality experiences worth remembering" />
@@ -30,7 +30,7 @@ export default function HomepageBanner() {
             B.C Canada Web Developer
           </h1>
           <div className="w-1/5 h-1 bg-highlight"></div>
-          <ul className=" w-4/5 lg:w-3/5 text-center my-4">
+          <ul className=" sm:w-4/5 lg:w-3/5 text-center my-4">
             {skills.map((item, i) => (
               <li key={item.id} className="inline-block my-1">
                 {item.label} {i < skills.length - 1 && <span>&nbsp;-&nbsp;</span>}

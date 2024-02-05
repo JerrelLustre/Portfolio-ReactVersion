@@ -1,5 +1,7 @@
 // Grid
 import { Container, Row, Col } from "../LayoutBlocks/LayoutBlocks";
+// Plugins
+import { Link as ScrollLink } from "react-scroll";
 
 // React Router
 import { NavLink, useLocation } from "react-router-dom";
@@ -25,13 +27,17 @@ export default function Navigation() {
 
   return (
     <Container
-      className="bg-black bg-opacity-90 h-12 py-4 flex items-center my-4 justify-between fixed z-50"
+      className="bg-black bg-opacity-90 w-screen h-12 py-4 flex items-center my-4 justify-between fixed z-[99]"
       fluid
     >
       <Row className="justify-between w-full  font-oswald text-lg text-white">
         <Col>
           <div className="flex w-full">
+          <NavLink
+                    to={'/'}
+                  >
             <img src={logo} alt="Site Logo" className="w-16 h-16" />
+            </NavLink>
             <ul className="lg:ml-6 flex gap-12 lg:gap-8 shadow-xl lg:shadow-none  items-center fixed bg-black lg:bg-transparent py-3 justify-center lg:justify-start lg:py-0 left-0 right-0 bottom-0 lg:relative">
               {/* Generate Menu links based on menuItems array */}
               {menuItems.map((item) => (
@@ -52,12 +58,21 @@ export default function Navigation() {
           </div>
         </Col>
         <Col className="align-self-end flex items-center">
-          <div className="flex">
-            <a href="#" className="w-full flex items-center">
+
+            <div className="w-full flex items-center cursor-pointer">
               <IoIosMail className="w-12 h-12" />
-              <span className="ml-3">Contact Me</span>
-            </a>
-          </div>
+              <ScrollLink
+                to='bottom-anchor'
+                className="ml-3"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                Contact Me
+              </ScrollLink>
+            </div>
+
         </Col>
       </Row>
     </Container>

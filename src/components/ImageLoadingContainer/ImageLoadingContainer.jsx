@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 
-export default function ImageLoadingContainer({children}) {
+export default function ImageLoadingContainer({children,className}) {
   const [loading, setLoading] = useState(true);
 
   return (
@@ -25,10 +25,10 @@ export default function ImageLoadingContainer({children}) {
             fill="currentFill"
           />
         </svg>
-        <span class="sr-only">Loading...</span>
+        <span className="sr-only">Loading...</span>
       </div>
       {/* Unhide image is fully loaded */}
-      <div style={{display: loading ? "none" : "block"}}>
+      <div className={`${className ? ' ' + className : ''}`} style={{display: loading ? "none" : "block"}}>
       {React.cloneElement(children, { onLoad: () => setLoading(false) })}
       </div>
     </>

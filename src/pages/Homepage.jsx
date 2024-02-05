@@ -1,24 +1,21 @@
-;
-
-
 import HomepageBanner from "../components/HomepageBanner/HomepageBanner";
 import HomepageIntroduction from "../components/HomepageIntroduction/HomepageIntroduction";
-import ProjectList, { ProjectCard } from "../components/ProjectList/ProjectList";
+import ProjectList, {
+  ProjectCard,
+} from "../components/ProjectList/ProjectList";
 
 // Thumbnails
 import WinterCityLightsThumbnail from "../assets/img/winter_city_lights/WinterCityLight-ProjectThumbnail.webp";
 import PatchworkThumbnail from "../assets/img/patchwork/JerrelLustre-patchworkThumbnail.webp";
-import VanfilThumbnail from "../assets/img/vanfil/JerrelLustre-vanfil-thumbnail.webp"
+import VanfilThumbnail from "../assets/img/vanfil/JerrelLustre-vanfil-thumbnail.webp";
 
 export default function Homepage() {
-
   return (
     <>
-
-      <HomepageBanner/>
-      <HomepageIntroduction/>
-      <ProjectList projectLink= {true}>
-      <ProjectCard
+      <HomepageBanner />
+      <HomepageIntroduction />
+      <ProjectList projectLink={true}>
+        <ProjectCard
           route="WinterCityLights"
           title="Winter City Lights"
           desc="A developed website for a mock Canadian winter festival"
@@ -46,7 +43,7 @@ export default function Homepage() {
             "Wordpress",
             "Media Management",
             "Site Design",
-            "SEO Management"
+            "SEO Management",
           ]}
           img={VanfilThumbnail}
         />

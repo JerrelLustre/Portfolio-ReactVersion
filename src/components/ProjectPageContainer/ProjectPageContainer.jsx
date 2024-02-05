@@ -37,7 +37,7 @@ export default function ProjectPageContainer({ children }) {
       <Row>
         <Col>
           <div className="pt-20 flex flex-col justify-center items-center">
-            <div className="border-white border-4 text-white font-robcon mx-8 flex mb-10 relative">
+            <div className="border-white border-4 text-white font-robcon sm:mx-8 flex mb-10 relative">
               {isPageLoaded && <ProjectPageNavigation />}
               <div>{children}</div>
             </div>
@@ -105,13 +105,13 @@ function ProjectPageNavigation() {
             className="font-oswald text-xl flex justify-center items-center lg:block px-4 py-2 mt-12  lg:bg-transparent lg:text-white bg-white text-black border-2 p-2 lg:border-0 lg:p-0 cursor-pointer"
           >
             Return to projects
-            <IoReturnDownBack className="" />
+            <IoReturnDownBack />
           </Link>
         </nav>
       </div>
       {/* Menu Toggle */}
       <div
-        className="fixed  bg-black border-2 border-highlight p-2 z-40 right-10 bottom-20 lg:hidden"
+        className="fixed  bg-black border-2 border-highlight p-2 z-50 right-10 bottom-28 lg:hidden"
         onClick={toggleMenu}
       >
         <TfiMenuAlt className={`w-10 h-10 ${isMenuOpen ? "hidden" : ""}`} />
@@ -129,7 +129,7 @@ export function SectionContainer({ children }) {
   return (
     <section className="my-16 text-lg lg:text-xl">
       <div
-        className={"customContainer box-border mx-auto px-10 lg:px-8 2xl:px-10"}
+        className={"projectContainer box-border mx-auto px-4 sm:px-10 lg:px-8 2xl:px-10"}
       >
         <div className="row w-full flex flex-wrap">{children}</div>
       </div>
