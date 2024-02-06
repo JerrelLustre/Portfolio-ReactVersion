@@ -90,7 +90,7 @@ function ProjectPageNavigation() {
           isMenuOpen ? "show" : ""
         } fixed inset-0 h-screen lg:h-auto lg:relative bg-[#000] items-center md:items-start flex z-20`}
       >
-        <nav className="w-full px-6 lg:w-fit sticky overflow-visible pb-24 top-0 h-4/5 mt-20 overflow-y-auto lg:h-screen lg:pt-24 lg:pb-8 flex flex-col justify-between items-center">
+        <nav className=" z-50 w-full px-6 lg:w-fit sticky overflow-visible pb-24 top-0 h-4/5 mt-20 overflow-y-auto lg:h-screen lg:pt-24 lg:pb-8 flex flex-col justify-between items-center">
           <div className="mb-4 lg:hidden">
             <h2 className="text-4xl text-white font-oswald ">
               Table of Contents
@@ -111,11 +111,11 @@ function ProjectPageNavigation() {
       </div>
       {/* Menu Toggle */}
       <div
-        className="fixed  bg-black border-2 border-highlight p-2 z-50 right-10 bottom-28 lg:hidden"
+        className="fixed  bg-black border-2 border-highlight p-2 z-50 right-10 bottom-14 lg:hidden"
         onClick={toggleMenu}
       >
-        <TfiMenuAlt className={`w-10 h-10 ${isMenuOpen ? "hidden" : ""}`} />
-        <IoCloseOutline className={`w-10 h-10 ${isMenuOpen ? "" : "hidden"}`} />
+        <TfiMenuAlt className={`w-6 h-6 ${isMenuOpen ? "hidden" : ""}`} />
+        <IoCloseOutline className={`w-6 h-6 ${isMenuOpen ? "" : "hidden"}`} />
       </div>
     </>
   );

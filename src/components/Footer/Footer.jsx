@@ -13,8 +13,7 @@ export default function Footer() {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
   return (
-    // Z-index is so that the mobile menu button that appears in the project log pages disappears when you scroll down far enough
-    <div className="z-[60] relative w-screen">
+    <div className="relative w-screen">
       <Container
         fluid
         className="bg-white text-center mt-8 border-t-8 border-highlight"

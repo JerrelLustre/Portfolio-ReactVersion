@@ -27,7 +27,7 @@ export default function Navigation() {
 
   return (
     <Container
-      className="bg-black bg-opacity-90 w-screen h-12 py-4 flex items-center my-4 justify-between fixed z-[99]"
+      className="bg-black bg-opacity-90 w-screen h-12 py-4 flex items-center my-4 justify-between fixed z-50"
       fluid
     >
       <Row className="justify-between w-full  font-oswald text-lg text-white">
