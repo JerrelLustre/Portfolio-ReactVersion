@@ -5,21 +5,23 @@ import { Container, Row, Col } from "../components/LayoutBlocks/LayoutBlocks";
 import ContentContainer from "../components/ContentContainer/ContentContainer";
 import HeadingBox from "../components/HeadingBox/HeadingBox";
 import ImageLoadingContainer from "../components/ImageLoadingContainer/ImageLoadingContainer";
+import AnimationContainer from "../components/AnimationContainer/AnimationContainer";
 // Image
 import Profile from "../assets/img/JerrelLustre-profile-lg.webp";
 import volunteer1 from "../assets/img/service-1.webp";
 import volunteer2 from "../assets/img/service-2.webp";
 import SkillsContainer from "../components/SkillsContainer/SkillsContainer";
 
+
 export default function About() {
   return (
-    <>
+    <AnimationContainer>
       <SubPageBanner text="About Me" />
       <Container className={"my-24"}>
         <Row className={"items-center flex-col-reverse lg:flex-row"}>
           <Col className={"w-full lg:w-6/12"}>
             <HeadingBox text="I want my work to inspire people" />
-            <ContentContainer className={"font-robcon leading-10 "}>
+            <ContentContainer className={"font-robcon leading-10 genericAnimation"}>
               <p>
                 "Why did I decide to pursue web development?" It's simple: I
                 enjoy the satisfaction of problem-solving, and seeing the
@@ -52,7 +54,7 @@ export default function About() {
         <Row className={"items-center"}>
           <Col className={"w-full lg:w-6/12"}>
             <HeadingBox text="I want to always be of help for others" />
-            <ContentContainer className={"font-robcon leading-10 my-4"}>
+            <ContentContainer className={"font-robcon leading-10 my-4 genericAnimation"}>
               <p>
                 I’m always looking for the next opportunity to help others,
                 whether it be participating in an operation to collect, manage
@@ -91,6 +93,6 @@ export default function About() {
         </Row>
       </Container>
       <SkillsContainer />
-    </>
+    </AnimationContainer>
   );
 }

@@ -11,6 +11,7 @@ import ProjectPageContainer from "../../components/ProjectPageContainer/ProjectP
 import ImageLoadingContainer from "../../components/ImageLoadingContainer/ImageLoadingContainer";
 import { LinkList } from "../../components/ProjectPageContainer/ProjectPageContainer";
 import Codeblock from "../../components/CodeBlock/Codeblock";
+import AnimationContainer from "../../components/AnimationContainer/AnimationContainer";
 
 // Images
 import courses from "../../assets/img/patchwork/JerrelLustre-courses.webp";
@@ -19,6 +20,7 @@ import desktopMockup from "../../assets/img/patchwork/JerrelLustre-desktopMockup
 import mobileMockup from "../../assets/img/patchwork/JerrelLustre-mobileMockup.webp";
 // import patchworkResearchLowRes from "../../assets/img/patchwork/JerrelLustre-patchworkResearch(low-res).webp";
 import patchworkResearch from "../../assets/img/patchwork/JerrelLustre-patchworkResearch.webp";
+
 
 export default function Patchwork() {
   const projectDetails = {
@@ -71,7 +73,7 @@ public function store(Request $request){
   const githubLink = "https://github.com/JerrelLustre/Patchwork";
   const liveLink = "https://patchwork.jerrellustre.com/public";
   return (
-    <>
+    <AnimationContainer>
       <ProjectPageContainer>
         <SectionContainer>
           {/* Banner */}
@@ -337,6 +339,6 @@ public function store(Request $request){
           </Col>
         </SectionContainer>
       </ProjectPageContainer>
-    </>
+    </AnimationContainer>
   );
 }

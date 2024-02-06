@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+// Plugins
 import gsap from "gsap/gsap-core";
 import { useGSAP } from "@gsap/react";
 import { Link as ScrollLink } from "react-scroll";

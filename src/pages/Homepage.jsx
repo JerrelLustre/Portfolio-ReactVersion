@@ -1,8 +1,10 @@
+// Components
 import HomepageBanner from "../components/HomepageBanner/HomepageBanner";
 import HomepageIntroduction from "../components/HomepageIntroduction/HomepageIntroduction";
 import ProjectList, {
   ProjectCard,
 } from "../components/ProjectList/ProjectList";
+import AnimationContainer from "../components/AnimationContainer/AnimationContainer";
 
 // Thumbnails
 import WinterCityLightsThumbnail from "../assets/img/winter_city_lights/WinterCityLight-ProjectThumbnail.webp";
@@ -11,7 +13,7 @@ import VanfilThumbnail from "../assets/img/vanfil/JerrelLustre-vanfil-thumbnail.
 
 export default function Homepage() {
   return (
-    <>
+    <AnimationContainer>
       <HomepageBanner />
       <HomepageIntroduction />
       <ProjectList projectLink={true}>
@@ -48,6 +50,6 @@ export default function Homepage() {
           img={VanfilThumbnail}
         />
       </ProjectList>
-    </>
+    </AnimationContainer>
   );
 }

@@ -55,7 +55,7 @@ export default function HomepageIntroduction() {
                     />
                   </ImageLoadingContainer>
                 </div>
-                <div>
+                <div className="genericAnimation">
                   <p className="mb-8 font-robcon text-xl mt-4">
                     I hope to use my work in order to help inspire others. With
                     my responsive websites and designs, I want to allow

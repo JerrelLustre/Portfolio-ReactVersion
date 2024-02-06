@@ -148,7 +148,7 @@ export function SectionHeading({ title, level = 2 }) {
   // Render heading and a divider
   return (
     <>
-      <Heading id={id} className="font-oswald text-2xl lg:text-4xl mb-3">
+      <Heading id={id} className="font-oswald text-2xl lg:text-4xl mb-3 genericAnimation">
         {title}
       </Heading>
       <div className="h-1 mb-3 bg-highlight"></div>

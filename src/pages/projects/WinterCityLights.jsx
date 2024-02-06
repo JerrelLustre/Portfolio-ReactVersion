@@ -10,6 +10,7 @@ import {
 import ProjectPageContainer from "../../components/ProjectPageContainer/ProjectPageContainer";
 import ImageLoadingContainer from "../../components/ImageLoadingContainer/ImageLoadingContainer";
 import { LinkList } from "../../components/ProjectPageContainer/ProjectPageContainer";
+import AnimationContainer from "../../components/AnimationContainer/AnimationContainer";
 
 // Images
 // import bannerLowRes from "../../assets/img/winter_city_lights/JerrelLustre-winterCityLights-banner(low-res).webp";
@@ -79,7 +80,7 @@ export default function WinterCityLights() {
   const liveLink = "https://winter-city-lights.jerrellustre.com/public/";
 
   return (
-    <>
+    <AnimationContainer>
       <ProjectPageContainer>
         <SectionContainer>
           {/* Banner */}
@@ -172,12 +173,11 @@ export default function WinterCityLights() {
                 alt="Components made for the Winter City Lights prototype. It includes the header, footer, carousel, and 'cards' used in the event pass selection"
               />
 
-              <div className={"my-4 xl:my-0 xl:ml-8 xl:w-1/2"}>
-                <ProjectImageContainer
-                  image={homepage}
-                  alt="Homepage for the website"
-                />
-              </div>
+              <ProjectImageContainer
+              className={'mt-4'}
+                image={homepage}
+                alt="Homepage for the website"
+              />
             </div>
           </Col>
         </SectionContainer>
@@ -263,15 +263,15 @@ export default function WinterCityLights() {
                 this project as a good demonstration of my ability to work in
                 standard HTML/PHP. Furthermore, it also showcases the
                 flexibility in my skillset as I had to also step into the role
-                of a web designer in order to create the website's layout. Overall,
-                I believe this project was a good stepping stone into my more
-                advanced projects that involved technologies such as ReactJS or
-                Laravel.
+                of a web designer in order to create the website's layout.
+                Overall, I believe this project was a good stepping stone into
+                my more advanced projects that involved technologies such as
+                ReactJS or Laravel.
               </p>
             </div>
           </Col>
         </SectionContainer>
       </ProjectPageContainer>
-    </>
+    </AnimationContainer>
   );
 }
