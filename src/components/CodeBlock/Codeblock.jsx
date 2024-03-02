@@ -1,6 +1,10 @@
 import "highlight.js/styles/github.css";
 import hljs from "highlight.js";
 import { useEffect } from "react";
+import javascript from 'highlight.js/lib/languages/javascript';
+
+
+hljs.registerLanguage('javascript', javascript);
 
 export default function Codeblock({ code }) {
   useEffect(() => {

@@ -5,6 +5,7 @@ import { ProjectCard } from "../components/ProjectList/ProjectList";
 import WinterCityLightsThumbnail from "../assets/img/winter_city_lights/WinterCityLight-ProjectThumbnail.webp";
 import PatchworkThumbnail from "../assets/img/patchwork/JerrelLustre-patchworkThumbnail.webp";
 import VanfilThumbnail from "../assets/img/vanfil/JerrelLustre-vanfil-thumbnail.webp"
+import DrawFourThumbnail from "../assets/img/drawfour/JerrelLustre-drawfour-thumbnail.webp";
 
 export default function Projects() {
   return (
@@ -45,6 +46,19 @@ export default function Projects() {
             "SEO Management"
           ]}
           img={VanfilThumbnail}
+        />
+        <ProjectCard
+          route="DrawFour"
+          title="DrawFour"
+          desc="Line up 4 pieces to win in this ReactJS game"
+          tags={[
+            "ReactJS",
+            "PeerJS",
+            "P2P Networking",
+            "Writing Game Logic",
+            "UI/UX",
+          ]}
+          img={DrawFourThumbnail}
         />
       </ProjectList>
     </>

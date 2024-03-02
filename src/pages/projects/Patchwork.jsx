@@ -23,11 +23,14 @@ import patchworkResearch from "../../assets/img/patchwork/JerrelLustre-patchwork
 
 
 export default function Patchwork() {
+  const githubLink = "https://github.com/JerrelLustre/Patchwork";
+  const liveLink = "https://patchwork.jerrellustre.com/public";
+
   const projectDetails = {
     "project-title": "Patchwork",
     "project-status": "Finished",
-    "github-link": "https://github.com/JerrelLustre/Patchwork",
-    "live-site-link": "https://patchwork.jerrellustre.com/public",
+    "github-link": githubLink,
+    "live-site-link": liveLink,
   };
 
   const techAndSkills = [
@@ -70,8 +73,7 @@ public function store(Request $request){
     return redirect('/');
 }`;
 
-  const githubLink = "https://github.com/JerrelLustre/Patchwork";
-  const liveLink = "https://patchwork.jerrellustre.com/public";
+
   return (
     <AnimationContainer>
       <ProjectPageContainer>
@@ -184,7 +186,7 @@ public function store(Request $request){
               as user registration, simple to develop.
             </p>
 
-            <Codeblock code={phpCode} language="php" />
+            <Codeblock code={phpCode}/>
           </Col>
         </SectionContainer>
         <SectionContainer>

@@ -18,11 +18,13 @@ import vanfilPageBuilder from "../../assets/img/vanfil/JerrelLustre-vanfil-pageb
 import vanfilStreamArchive from "../../assets/img/vanfil/JerrelLustre-vanfil-streamArchive.webp";
 
 export default function VanFil() {
+  const liveLink = "https://vanfilsdachurch.ca/";
+
   const projectDetails = {
     "project-title": "Vancouver Filipino SDA Church Website",
     "project-status": "Finished",
     "github-link": "Null",
-    "live-site-link": "https://vanfilsdachurch.ca/",
+    "live-site-link": liveLink,
   };
 
   const techAndSkills = [
@@ -40,7 +42,7 @@ export default function VanFil() {
     },
   ];
 
-  const liveLink = "https://vanfilsdachurch.ca/";
+
 
   return (
     <AnimationContainer>

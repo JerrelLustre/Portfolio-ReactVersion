@@ -254,7 +254,7 @@ export function ProjectImageContainer({ className, image, alt = "" }) {
       }`}
     >
       {/* Info Icon place in the top right to hint to users that they can click on the image */}
-      <FaCircleInfo className="w-8 h-8 pointer-events-none fill-highlight top-4 right-4 absolute" />
+      <FaCircleInfo className="w-8 h-8 pointer-events-none fill-highlight top-4 right-4 absolute border-2 bg-black m-2 rounded-full border-black" />
       <ImageLoadingContainer>
         <img
           src={image}

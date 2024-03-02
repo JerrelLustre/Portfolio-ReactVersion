@@ -42,7 +42,7 @@ export function ProjectCard({ route, title, desc, tags, img }) {
         <img
           src={img}
           alt={title}
-          className="w-full my-4 object-container aspect-square"
+          className="w-full my-4 object-contain aspect-square"
         />
       </ImageLoadingContainer>
 

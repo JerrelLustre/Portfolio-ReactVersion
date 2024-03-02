@@ -38,7 +38,7 @@ export default function Footer() {
               <div>
                 <p className="flex items-center font-oswald text-xl">
                   <IoIosMail color="#565656" className="w-8 h-auto mr-6" />
-                  Jerrellustre@gmail.com
+                  Jerrellustre626@gmail.com
                 </p>
               </div>
               <div>

@@ -31,11 +31,14 @@ import thankyou from "../../assets/img/winter_city_lights/JerrelLustre-winterCit
 import ticketSelection from "../../assets/img/winter_city_lights/JerrelLustre-winterCityLights-ticketSelection.webp";
 
 export default function WinterCityLights() {
+  const githubLink = "https://github.com/JerrelLustre/Winter-City-Lights";
+  const liveLink = "https://winter-city-lights.jerrellustre.com/public/";
+
   const projectDetails = {
     "project-title": "Winter City Lights Event Festival",
     "project-status": "Finished",
-    "github-link": "https://github.com/JerrelLustre/Winter-City-Lights",
-    "live-site-link": "https://winter-city-lights.jerrellustre.com/public/",
+    "github-link": {githubLink},
+    "live-site-link": {liveLink},
   };
   const techAndSkills = [
     "HTML",
@@ -76,8 +79,7 @@ export default function WinterCityLights() {
       link: "https://www.linkedin.com/in/aaron-qiu-498bb9116/",
     },
   ];
-  const githubLink = "https://github.com/JerrelLustre/Winter-City-Lights";
-  const liveLink = "https://winter-city-lights.jerrellustre.com/public/";
+
 
   return (
     <AnimationContainer>
