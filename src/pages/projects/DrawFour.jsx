@@ -242,7 +242,7 @@ export default function DrawFour() {
   const handleReceivingDataCode = `
   /*  Handler for when we 
   receive data from a peer */
-  
+
   useEffect(() => {
     if (peer === null) {
       return;
@@ -453,8 +453,8 @@ export default function DrawFour() {
                 thus syncing the two boards between the users.
               </p>
             </div>
-            <div className="flex flex-col gap-y-4 md:w-1/2 mt-6 items-center md:items-start overflow-hidden">
-              <div className="max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-full">
+            <div className="flex flex-col mt-6 items-center md:items-start overflow-hidden">
+              <div className="max-w-xs sm:max-w-sm md:max-w-full lg:max-w-full">
                 <CodeBlock code={handleReceivingDataCode} />
               </div>
             </div>
