@@ -10,7 +10,7 @@ import {
 import ProjectPageContainer from "../../components/ProjectPageContainer/ProjectPageContainer";
 import ImageLoadingContainer from "../../components/ImageLoadingContainer/ImageLoadingContainer";
 import { LinkList } from "../../components/ProjectPageContainer/ProjectPageContainer";
-import Codeblock from "../../components/CodeBlock/Codeblock";
+import Codeblock from "../../components/CodeBlock/CodeBlock";
 import AnimationContainer from "../../components/AnimationContainer/AnimationContainer";
 
 // Images
@@ -20,7 +20,6 @@ import desktopMockup from "../../assets/img/patchwork/JerrelLustre-desktopMockup
 import mobileMockup from "../../assets/img/patchwork/JerrelLustre-mobileMockup.webp";
 // import patchworkResearchLowRes from "../../assets/img/patchwork/JerrelLustre-patchworkResearch(low-res).webp";
 import patchworkResearch from "../../assets/img/patchwork/JerrelLustre-patchworkResearch.webp";
-
 
 export default function Patchwork() {
   const githubLink = "https://github.com/JerrelLustre/Patchwork";
@@ -72,7 +71,6 @@ public function store(Request $request){
     auth()->login($user);
     return redirect('/');
 }`;
-
 
   return (
     <AnimationContainer>
@@ -185,8 +183,11 @@ public function store(Request $request){
               Here is an example of how Laravel can make complex features, such
               as user registration, simple to develop.
             </p>
-
-            <Codeblock code={phpCode}/>
+            <div className="flex flex-col mt-6 items-center md:items-start overflow-hidden">
+              <div className="max-w-xs sm:max-w-sm md:max-w-full lg:max-w-full">
+                <Codeblock code={phpCode} />
+              </div>
+            </div>
           </Col>
         </SectionContainer>
         <SectionContainer>
@@ -303,8 +304,8 @@ public function store(Request $request){
                 an existing design, collaboration between designer and
                 developer, project management, and deployment of a project for
                 real-world use. Furthermore, it gave me an oppurtunity to learn
-                about and work in Laravel PHP, expanding my skillset. Overall,
-                I believe that Patchwork was a valuable learning experience as
+                about and work in Laravel PHP, expanding my skillset. Overall, I
+                believe that Patchwork was a valuable learning experience as
                 students and we were glad to be a part of something that was of
                 benefit to our peers as well.
               </p>
