@@ -10,7 +10,7 @@ import {
 import ProjectPageContainer from "../../components/ProjectPageContainer/ProjectPageContainer";
 import ImageLoadingContainer from "../../components/ImageLoadingContainer/ImageLoadingContainer";
 import { LinkList } from "../../components/ProjectPageContainer/ProjectPageContainer";
-import Codeblock from "../../components/CodeBlock/Codeblock";
+import CodeBlock from "../../components/CodeBlock/CodeBlock";
 import AnimationContainer from "../../components/AnimationContainer/AnimationContainer";
 
 // Images
@@ -46,36 +46,49 @@ export default function DrawFour() {
   ];
 
   const setPieceCode = ` 
-  /* -------------------------------------------------------------------------- */
-  /*                  Update game board when user makes a move                  */
-  /* -------------------------------------------------------------------------- */
+
+   /*Update game board 
+   when user makes a move*/
+
   function setPiece(colPos) {
-    // Enabled in situations where the player shouldn't be allowed to update the board
+    // Enabled in situations
+    // where the player
+    // shouldn't be allowed 
+    // to update the board
     if (gamestate === false) {
       return;
     }
-    // Enabled when its not the player's turn
+    // Enabled when its 
+    // not the player's turn
     if (isMyTurn === false) {
       return;
     }
 
-    // Decide the piece's color value based on player state
+    // Decide the piece's 
+    // color value based on player state
     let value = playerColors[playerState - 1];
 
-    // Create a copy of the current board state
+    // Create a copy of 
+    // the current board state
     const newBoard = [...board];
 
-    // When clicking on a column, start at the bottom-most row and check if its filled. If not, change the value and break the loop
+    // When clicking on a column, 
+    // start at the bottom-most row and
+    // check if its filled. 
+    // If not, change the value and 
+    // break the loop
     for (let r = rows - 1; r >= 0; r--)
       if (!newBoard[r][colPos]) {
         newBoard[r][colPos] = value;
         break;
       }
 
-    // Update the board state with the new array
+    // Update the board state 
+    // with the new array
     setBoard(newBoard);
 
-    // check for win conditions, if so playerHasWon to true
+    // check for win conditions, 
+    // if so set playerHasWon to true
     if (checkBoardState(board, value)) {
       handlePlayerWin();
       peerConnection.send(
@@ -86,13 +99,16 @@ export default function DrawFour() {
         },
         (error) => {
           setErrorState(true);
-          setErrorMsg(error + "Connection error occurred. Returning to lobby");
+          setErrorMsg(
+            error + "Connection error occurred. Returning to lobby"
+          );
         }
       );
       return;
     }
 
-    // check for tie conditions, if so set gameIsTied to true
+    // check for tie conditions, 
+    // if so set gameIsTied to true
     const nullCheck = board
       .flatMap((row) => row)
       .every((item) => item !== null);
@@ -106,29 +122,32 @@ export default function DrawFour() {
         },
         (error) => {
           setErrorState(true);
-          setErrorMsg(error + "Connection error occurred. Returning to lobby");
+          setErrorMsg(
+            error + "Connection error + 
+          
         }
-      );
       return;
     }
 
     // Switch to next player
     let nextPlayer = playerState === 1 ? 2 : 1;
 
-    // Change to the color of the next player
+    // Change to the color 
+    // of the next player
     setPlayerState(nextPlayer);
     sendBoardData(board, nextPlayer);
   }`;
 
   const sendDataCode = `
-  /* -------------------------------------------------------------------------- */
-  /*                     Send update game board data to peer                    */
-  /* -------------------------------------------------------------------------- */
+/*Send updated board
+ data to the peer*/
   function sendBoardData(board, nextPlayer) {
-    // Disable this page's user from placing additonal pieces
+    // Disable this page's user
+    // from placing additonal pieces
     setIsMyTurn(false);
 
-    // Send the board and player state data to the peer
+    // Send the board and 
+    // player state data to the peer
     peerConnection.send(
       {
         sentBoardData: true,
@@ -138,21 +157,26 @@ export default function DrawFour() {
       },
       (error) => {
         setErrorState(true);
-        setErrorMsg(error + "Connection error occurred. Returning to lobby");
+        setErrorMsg(error + 
+        "Connection error occurred. Returning to lobby");
       }
     );
   }`;
 
   const checkWinConditionCode = `
-  /* -------------------------------------------------------------------------- */
-  /*           Check for win condition (four same pieces side by side)          */
-  /* -------------------------------------------------------------------------- */
+  /* Check for win condition 
+  (four same pieces side by side) */
   function checkBoardState(board, player) {
     // Check horizontal
     // Repeat for every row in the board
-    for (let row = 0; row < board.length; row++) {
-      // Repeat for every column, -4 is needed as it would be impossible to win horizontally starting from the 3rd column (or col[2])
-      for (let col = 0; col <= board[row].length - 4; col++) {
+    for (let row = 0; 
+    row < board.length; row++) {
+      // Repeat for every column, -4 is needed as
+      // it would be impossible to win 
+      // horizontally starting from 
+      // the 3rd column (or col[2])
+      for (let col = 0; 
+      col <= board[row].length - 4; col++) {
         if (
           board[row][col] === player &&
           board[row][col + 1] === player &&
@@ -166,8 +190,13 @@ export default function DrawFour() {
 
     // Check vertical
     // Repeat for every column
-    for (let col = 0; col < board[0].length; col++) {
-      // Repeat for every row, -4 is needed as it would be impossible to win vertically due to not having enough spaces
+    for (let col = 0; 
+    col < board[0].length; col++) {
+      // Repeat for every row, 
+      // -4 is needed as it 
+      // would be impossible 
+      // to win vertically
+      // due to not having enough spaces
       for (let row = 0; row <= board.length - 4; row++) {
         if (
           board[row][col] === player &&
@@ -181,8 +210,10 @@ export default function DrawFour() {
     }
 
     // Check diagonals
-    for (let row = 0; row <= board.length - 4; row++) {
-      for (let col = 0; col <= board[row].length - 4; col++) {
+    for (let row = 0; 
+    row <= board.length - 4; row++) {
+      for (let col = 0; 
+      col <= board[row].length - 4; col++) {
         // Check upward diagonal
         if (
           board[row][col] === player &&
@@ -209,9 +240,9 @@ export default function DrawFour() {
   }`;
 
   const handleReceivingDataCode = `
-  /* -------------------------------------------------------------------------- */
-  /*                Handler for when we receive data from a peer                */
-  /* -------------------------------------------------------------------------- */
+  /*  Handler for when we 
+  receive data from a peer */
+  
   useEffect(() => {
     if (peer === null) {
       return;
@@ -226,7 +257,8 @@ export default function DrawFour() {
           return;
         }
 
-        // Runs only on initial connection
+        // Runs only on 
+        // initial connection
         if (data.initialConnect === true) {
           let conn = peer.connect(data.id);
           conn.on("open", function () {
@@ -238,7 +270,8 @@ export default function DrawFour() {
           return;
         }
 
-        // Runs if the data says a player has won
+        // Runs if the data 
+        // says a player has won
         if (data.playerHasWon === true) {
           setBoard(data.board);
           setPlayerState(data.winningPlayer);
@@ -246,7 +279,8 @@ export default function DrawFour() {
           return;
         }
 
-        // Runs if the data says to reset the game
+        // Runs if the data 
+        // says to reset the game
         if (data.resetGame === true) {
           setIsMyTurn(true);
           setBoard(createEmptyBoard(rows, columns));
@@ -255,7 +289,8 @@ export default function DrawFour() {
           return;
         }
 
-        // Runs if the data says a player has won
+        // Runs if the data
+        // says a player has won
         if (data.gameIsTied === true) {
           setBoard(data.board);
           setGameIsTied(true);
@@ -315,7 +350,6 @@ export default function DrawFour() {
             </div>
           </Col>
         </SectionContainer>
-
         <SectionContainer>
           <Col className={"w-full mt-12 md:flex md:leading-7 overflow-clip"}>
             {/* need an extra div here because sticky cannot have an immediate parent with flex */}
@@ -382,15 +416,17 @@ export default function DrawFour() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-y-4 md:w-1/2">
-              <div>
-                <Codeblock code={setPieceCode} />
-              </div>
-              <div>
-                <Codeblock code={checkWinConditionCode} />
-              </div>
-              <div>
-                <Codeblock code={sendDataCode} />
+            <div className="flex flex-col gap-y-4 md:w-1/2 items-center md:items-start overflow-hidden">
+              <div className="max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-full">
+                <div>
+                  <CodeBlock code={setPieceCode} />
+                </div>
+                <div>
+                  <CodeBlock code={checkWinConditionCode} />
+                </div>
+                <div>
+                  <CodeBlock code={sendDataCode} />
+                </div>
               </div>
             </div>
           </Col>
@@ -417,8 +453,10 @@ export default function DrawFour() {
                 thus syncing the two boards between the users.
               </p>
             </div>
-            <div className=" mt-6">
-              <Codeblock code={handleReceivingDataCode} />
+            <div className="flex flex-col gap-y-4 md:w-1/2 mt-6 items-center md:items-start overflow-hidden">
+              <div className="max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-full">
+                <CodeBlock code={handleReceivingDataCode} />
+              </div>
             </div>
           </Col>
         </SectionContainer>

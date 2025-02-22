@@ -1,19 +1,14 @@
-import "highlight.js/styles/github.css";
-import hljs from "highlight.js";
-import { useEffect } from "react";
-import javascript from 'highlight.js/lib/languages/javascript';
-
-
-hljs.registerLanguage('javascript', javascript);
+import { CodeBlock } from "react-code-block";
 
 export default function Codeblock({ code }) {
-  useEffect(() => {
-    hljs.highlightAll();
-  }, []);
 
   return (
-    <pre className="whitespace-pre-wrap">
-      <code className="text-xs sm:text-sm lg:text-base">{code}</code>
-    </pre>
+    <CodeBlock code={code} language="js">
+    <CodeBlock.Code className="bg-black text-sm overflow-scroll my-2 md:my-0">
+    <CodeBlock.LineContent>
+      <CodeBlock.Token />
+    </CodeBlock.LineContent>
+    </CodeBlock.Code >
+  </CodeBlock>
   );
 }

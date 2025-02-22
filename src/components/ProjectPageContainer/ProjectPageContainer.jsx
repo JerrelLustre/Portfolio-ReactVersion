@@ -127,7 +127,7 @@ function ProjectPageNavigation() {
 export function SectionContainer({ children }) {
   // Functionality should be similar to the GridContainer + Row components but we're making it seperate here because we need less padding than usual
   return (
-    <section className="my-16 text-lg lg:text-xl">
+    <section className="my-20 text-lg lg:text-xl">
       <div
         className={"projectContainer box-border mx-auto px-4 sm:px-10 lg:px-8 2xl:px-10"}
       >
